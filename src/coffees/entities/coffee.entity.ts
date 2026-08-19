@@ -1,6 +1,16 @@
+import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+
+@Entity() //sql table === 'coffee' @Entity('coffees')
 export class Coffee {
-    id?: number;
-    name?: string;
-    brand?: string;
-    flavours?: string[];
+    @PrimaryGeneratedColumn()
+    id!: number;
+
+    @Column()
+    name!: string;
+
+    @Column()
+    brand!: string;
+
+    @Column('json', { nullable: true }) // json and optional
+    flavours!: string[];
 }

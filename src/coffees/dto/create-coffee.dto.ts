@@ -2,11 +2,11 @@ import { IsString } from "class-validator";
 
 export class CreateCoffeeDto {
     @IsString()
-    readonly name: string;
+    readonly name!: string;
 
     @IsString()
-    readonly brand: string;
+    readonly brand!: string;
 
     @IsString({ each: true }) // expects that each value is an array of string
-    readonly flavours: string[];
+    readonly flavours!: string[];
 }
